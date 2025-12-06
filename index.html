@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniTube — Demo</title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MiniTube</div>
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Buscar videos..." />
+    </div>
+    <button id="openUpload" class="btn">Subir</button>
+  </header>
+
+  <main class="container">
+    <section class="player-area">
+      <video id="mainPlayer" controls poster="" src="">
+        Tu navegador no soporta video.
+      </video>
+      <div class="video-info">
+        <h2 id="mainTitle">Selecciona un video</h2>
+        <p id="mainDesc">Descripción del video seleccionado aparecerá aquí.</p>
+        <div class="meta">
+          <span id="likes">👍 0</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Videos</h3>
+      <div id="videoList" class="video-list"></div>
+    </aside>
+  </main>
+
+  <!-- Modal subir -->
+  <div id="uploadModal" class="modal hidden">
+    <div class="modal-card">
+      <h3>Subir video (demo local)</h3>
+      <form id="uploadForm">
+        <label>Título<input name="title" required /></label>
+        <label>Descripción<textarea name="desc"></textarea></label>
+        <label>Elegir archivo de video
+          <input name="file" type="file" accept="video/*" required />
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn">Subir</button>
+          <button id="cancelUpload" type="button" class="btn alt">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
